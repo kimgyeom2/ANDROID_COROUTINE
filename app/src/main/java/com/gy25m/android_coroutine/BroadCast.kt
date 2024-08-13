@@ -34,7 +34,7 @@ class BroadCast(private val context: Context) : BroadcastReceiver() {
 
     fun register() {
         val filter = IntentFilter()
-        filter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)
+        filter.addAction (WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)
         context.registerReceiver(this, filter)
     }
 
