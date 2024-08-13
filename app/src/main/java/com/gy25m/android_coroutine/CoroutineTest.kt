@@ -28,7 +28,7 @@ class CoroutineTest {
     @Test
     fun main2() = runBlocking(CoroutineName("CoroutineName #0")) {
         log("main started")
-        launch(CoroutineName("Coroutine $1")) {
+        launch(CoroutineName( "Coroutine $1")) {
             log("Before load")
             val data = loadFromBackground()
             log("data : $data")
