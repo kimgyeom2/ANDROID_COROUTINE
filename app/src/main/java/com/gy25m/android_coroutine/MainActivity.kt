@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                         textView.visibility = View.GONE
                     }
                     is UiState.Success -> {
-                        Log.e("gyeom","zzzzzz")
+                        Log.e("gyeom","zzzㅋzzz")
                         progressBar.visibility = View.GONE
                         textView.visibility = View.VISIBLE
                         binding.textView2.text=uiState.data
