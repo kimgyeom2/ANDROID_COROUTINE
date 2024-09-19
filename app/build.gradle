@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.gy25m.android_coroutine'
-    compileSdk 31
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.gy25m.android_coroutine"
