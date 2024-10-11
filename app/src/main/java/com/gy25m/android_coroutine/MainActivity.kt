@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         btn = findViewById(R.id.btn)
 //
 //        binding.btn.setOnClickListener { viewModel.aa() }
-        binding.btn2.setOnClickListener { viewModel._uiState.value=UiState.Success("민임ㄴㅇㅁㄴㅇㅁㄴㅇ")  }
+        binding.btn2.setOnClickListener { viewModel._uiState.value=UiState.Success("민임ㄴㅇㅁ ㄴㅇㅁㄴㅇ")  }
         binding.btn3.setOnClickListener { viewModel.cc()  }
         binding.btn4.setOnClickListener { viewModel.dd() }
         // Observe the uiState
