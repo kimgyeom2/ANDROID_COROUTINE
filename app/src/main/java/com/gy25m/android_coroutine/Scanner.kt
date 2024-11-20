@@ -5,30 +5,18 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import com.example.iscandemo.iScanInterface
 
 @SuppressLint("StaticFieldLeak")
 object Scanner {
 
     var barcodeIntent = "value"
     private var broadcastAction = "android.intent.action.SCANRESULT"
-    private var scannerInterfaceA132: iScanInterface? = null
 
     private var broadcastReceiver: BroadcastReceiver? = null
     private var mContext: Context? = null
     private val filter = IntentFilter()
 
-    fun initialize(context: Context) {
-        mContext = context
-        filter.addAction(broadcastAction)
 
-        scannerInterfaceA132 = iScanInterface(context).apply {
-            continceScan(false)
-            setOutputMode(1)
-            setIntervalTime(100)
-        }
-
-    }
 
 
     /**
@@ -65,7 +53,6 @@ object Scanner {
 
     fun useScan(use: Boolean = true) {
         if (!use) continceScan(false)
-        scannerInterfaceA132?.lockScanKey(use)
     }
 
 
@@ -84,18 +71,8 @@ object Scanner {
 
             isContince = use ?: !isContince
 
-            scannerInterfaceA132?.apply {
-                lockScanKey(!isContince)
-                continuousScan(true)
-                if (!isContince) scan_stop()
-            }
         }
     }
 
-    /**
-     * 연속스캔 종료
-     */
-    fun notUseContinuousScan() {
-        scannerInterfaceA132?.continuousScan(false)
-    }
+
 }

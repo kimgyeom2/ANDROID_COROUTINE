@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.gy25m.android_coroutine.databinding.ActivityMainBinding
 import kotlinx.coroutines.delay
@@ -62,6 +63,22 @@ class MainActivity : AppCompatActivity() {
             viewModel.loadData()
         }
         // Load data
+
+        val dialog = AlertDialog.Builder(this@MainActivity)
+            .setTitle("제목")
+            .setPositiveButton("예") { _, _ ->
+
+            }
+            .setNegativeButton("아니오") { _, _ ->
+                finish()
+            }
+            .create()
+
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).requestFocus()
+        }
+
+        dialog.show()
     }
 }
 
