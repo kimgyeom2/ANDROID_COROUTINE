@@ -19,7 +19,7 @@ class MyAccessibilityService : AccessibilityService() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == "touch") {
-            val x = intent.getIntExtra("x", 0)
+            val x = intent.getIntExtra(" x", 0)
             val y = intent.getIntExtra("y", 0)
             clickScreen(x.toFloat(), y.toFloat())
         }
